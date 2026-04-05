@@ -12,7 +12,7 @@ class FinancialRecordCreate(BaseModel):
     date: datetime
     notes: Optional[str] = None
 
-    @field_validator("name", "mobile_number")
+    @field_validator("customer_name", "mobile_number")
     def strip_fields(cls, v):
         return v.strip()
 
@@ -26,7 +26,7 @@ class FinancialRecordUpdate(BaseModel):
     date: Optional[datetime] = None
     notes: Optional[str] = None
 
-    @field_validator("name", "mobile_number")
+    @field_validator("customer_name", "mobile_number")
     def strip_fields(cls, v):
         return v.strip()
 
