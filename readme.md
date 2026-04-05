@@ -1,5 +1,7 @@
 # Fintech Financial Records API 🚀
 
+
+
 [![FastAPI](https://img.shields.io/badge/FastAPI-Modern%20Framework-blue?logo=fastapi)](https://fastapi.tiangolo.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Reliable%20DB-brightgreen)](https://www.postgresql.org/)
 [![Railway](https://img.shields.io/badge/Hosted-Railway-orange?logo=railway)](https://railway.app/)
@@ -38,14 +40,14 @@
 | Method | Endpoint | Access | Description |
 |--------|----------|--------|-------------|
 | `POST` | `/auth/register` | Public | Create new user |
-| `POST` | `/auth/token` | Public | Login (returns JWT) |
+| `POST` | `/auth/token` | Public | Login (returns JWT) | Default role ->Viewer
 
 ### User Management (Admin Only)
-| Method | Endpoint | Description |
+| Method | Endpoint | Description | Privilege
 |--------|------------------|-------------|
-| `GET` | `/admin/users/` | List all users |
-| `PATCH` | `/admin/users/{user_id}/role` | Update user role |
-| `PATCH` | `/admin/users/{user_id}/status` | Activate/deactivate user |
+| `GET` | `/admin/users/` | List all users | Admin
+| `PATCH` | `/admin/users/{user_id}/role` | Update user role | Admin
+| `PATCH` | `/admin/users/{user_id}/status` | Activate/deactivate user | Admin
 
 ### Financial Records
 | Method | Endpoint | Access | Description |
@@ -60,12 +62,12 @@
 ### Dashboard Analytics
 | Method | Endpoint | Access | Description |
 |--------|--------------------------------|--------|-------------|
-| `GET` | `/dashboard/financial_summary/` | All | Overall totals |
-| `GET` | `/dashboard/financial_summary/customer/summary/{mobile_number}` | All | Customer summary |
-| `GET` | `/dashboard/financial_summary/category/{category}` | All | Category breakdown |
-| `GET` | `/dashboard/financial_summary/customer/recent_activity/{mobile_number}` | All | Recent customer activity |
-| `GET` | `/dashboard/financial_summary/trends/monthly` | All | Monthly income/expense trends |
-| `GET` | `/dashboard/financial_summary/export/csv` | Analyst+ | Export all records as CSV |
+| `GET` | `/dashboard/financial_summary/` | Analyst + Admin | Overall totals |
+| `GET` | `/dashboard/financial_summary/customer/summary/{mobile_number}` | Analyst + Admin  | Customer summary |
+| `GET` | `/dashboard/financial_summary/category/{category}` | Analyst + Admin  | Category breakdown |
+| `GET` | `/dashboard/financial_summary/customer/recent_activity/{mobile_number}` |Analyst + Admin  | Recent customer activity |
+| `GET` | `/dashboard/financial_summary/trends/monthly` | Analyst + Admin  | Monthly income/expense trends |
+| `GET` | `/dashboard/financial_summary/export/csv` | Analyst + Admin  | Export all records as CSV |
 
 ### Health Check
 
@@ -123,6 +125,32 @@ fintech_project/
 └── Procfile # Railway deployment
 
 
+## Tradeoffs
+- The admin credential is currently hardcoded in the seed_admins.py however for production it may be shifted to .env file
+- Used os.getenv() for environment variables directly. In production this would be replaced with pydantic BaseSettings for typed config management and validation
+- Sync vs Async: Used synchronous SQLAlchemy Session with def routes for simplicity. A production system would benefit from AsyncSession with asyncpg for true async I/O, but that added complexity was out of scope for this assignment.
+
+### Database
+- Used **SQLite** locally for simplicity. Switched to **PostgreSQL** on Railway via `DATABASE_URL` environment variable with no code changes needed.
+- In production, **Alembic** would be used for schema migrations instead of `create_all` on startup.
+
+### Authentication
+- Used `OAuth2PasswordRequestForm` for the login endpoint as it follows FastAPI's standard auth pattern and works seamlessly with Swagger UI for testing.
+- `SECRET_KEY` is stored in `.env`. In production this should be a long random string stored in a secrets manager.
+
+### Async vs Sync
+- Used synchronous SQLAlchemy `Session` with `def` routes for simplicity. A production system would benefit from `AsyncSession` with `asyncpg` for true async I/O.
+
+### Configuration
+- Used `os.getenv()` for environment variables directly. In production this would be replaced with Pydantic `BaseSettings` for typed config management and validation.
+
+### Pagination
+- Pagination is not implemented on list endpoints. In production, limit/offset or cursor based pagination would be added.
+
+### Seed Data
+- Tables and seed data are created automatically on startup via FastAPI lifespan. In production, Alembic migrations and a separate deployment step would handle this.
+
+
 ## 🚀 Local Setup
 
 ```bash
@@ -140,7 +168,6 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-**Docs:** `http://127.0.0.1:8000/docs`
 
 ## 🌐 Production
 
