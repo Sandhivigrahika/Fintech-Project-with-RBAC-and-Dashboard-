@@ -5,6 +5,7 @@ from app.models.user import User
 from app.core.security import hash_password, verify_password, create_access_token
 
 def register_user(db: Session,name: str, email: str, password: str):
+
     existing  = db.query(User).filter(User.email==email).first()
 
     if existing:

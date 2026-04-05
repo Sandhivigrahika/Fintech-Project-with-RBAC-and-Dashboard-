@@ -111,6 +111,7 @@ def category_wise_summary(db: Session, category: RecordCategory):
 
 def recent_activity_customer(db: Session, mobile_number: str, limit: int =5):
 
+
     if not mobile_number:
         raise HTTPException(400, "Mobile number is required")
 

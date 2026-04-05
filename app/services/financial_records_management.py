@@ -121,6 +121,8 @@ def update_financial_record_service (record_id : int,
                                      data: FinancialRecordUpdate,
                                      db: Session):
 
+
+
     record = db.query(FinancialRecord).filter(FinancialRecord.id == record_id, FinancialRecord
                                               .is_deleted==False).first()
 

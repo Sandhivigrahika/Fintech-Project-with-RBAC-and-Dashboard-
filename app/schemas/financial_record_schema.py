@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from datetime import datetime
 from app.enums.enums import RecordCategory, RecordType
 from typing import Optional
@@ -12,6 +12,10 @@ class FinancialRecordCreate(BaseModel):
     date: datetime
     notes: Optional[str] = None
 
+    @field_validator("name", "mobile_number")
+    def strip_fields(cls, v):
+        return v.strip()
+
 
 class FinancialRecordUpdate(BaseModel):
     customer_name:Optional[str]  = None
@@ -21,6 +25,10 @@ class FinancialRecordUpdate(BaseModel):
     category: Optional[RecordCategory] = None
     date: Optional[datetime] = None
     notes: Optional[str] = None
+
+    @field_validator("name", "mobile_number")
+    def strip_fields(cls, v):
+        return v.strip()
 
 
 class FinancialRecordResponse(BaseModel):

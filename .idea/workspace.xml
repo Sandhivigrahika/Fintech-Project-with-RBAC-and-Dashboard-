@@ -5,34 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65e8d440-a44e-4302-88a9-8731d19dfddb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/centralised_helpers/normailze_phone_number.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/centralised_helpers/normailze_phone_number.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/dependencies.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/dependencies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/rbac.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/rbac.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/security.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/security.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/db/session.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db/session.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/enums/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/enums/enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/financial_record.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/financial_record.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/admin_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/admin_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/auth_router.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/auth_router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/dashboard_summary_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/dashboard_summary_routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes/financial_records_management_rooutes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/financial_records_management_rooutes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/financial_record_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/financial_record_schema.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/schemas/register_login_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/register_login_schema.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/schemas/user_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/user_response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/create_tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/create_tables.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/data/financial_records.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/data/financial_records.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/seed_admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/seed_admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/scripts/seed_financial.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/scripts/seed_financial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/auth_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/auth_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/dashboard_summary.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/dashboard_summary.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/export_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/export_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/financial_records_management.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/financial_records_management.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/user_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/user_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +48,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/neelh/PycharmProjects/Motospot_mvp"
   }
 }]]></component>
   <component name="RecentsManager">
