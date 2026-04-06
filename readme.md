@@ -74,7 +74,7 @@
 
 
 ## 🛠 Tech Stack
-- Framework: FastAPI (async-ready, auto-docs)
+- Framework: FastAPI 
 - Database: PostgreSQL (Railway hosted)
 - ORM: SQLAlchemy
 - Auth: JWT (OAuth2PasswordBearer)
